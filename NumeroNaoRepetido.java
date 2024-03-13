@@ -7,13 +7,20 @@ public class NumeroNaoRepetido {
         // Criando a lista
         List<Integer> lista = new ArrayList<>();
         // Adicionando elementos na lista
+
+        lista.add(-2);
+        lista.add(0);
         lista.add(1);
         lista.add(6);
         lista.add(2); // < esse é o número não repetido
         lista.add(1);
         lista.add(3);
+        lista.add(-2);
         lista.add(6);
+        lista.add(-1);
         lista.add(3);
+        lista.add(0);
+        lista.add(-1);
 
         // Testando o método
         System.out.println(numeroNaoRepetido(lista));
@@ -36,7 +43,7 @@ public class NumeroNaoRepetido {
         // Se o primeiro número é diferente do segundo em uma lista ordenada,
         // o primeiro não repete.
         if (numeros.getFirst() != numeros.get(1)){
-            return numeros.getLast();
+            return numeros.getFirst();
         }
 
         // Se o último número é diferente do penúltimo em uma lista ordenada,
@@ -49,7 +56,7 @@ public class NumeroNaoRepetido {
         // em uma lista ordenada então este número não repete.
         for (int i = 1; i < numeros.size() - 1; i++) {
             if (numeros.get(i) != numeros.get(i - 1) && numeros.get(i) != numeros.get(i + 1)) {
-                return i;
+                return numeros.get(i);
             }
         }
         // Lista sem números repetidos;
